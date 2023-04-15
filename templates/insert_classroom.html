@@ -1,0 +1,30 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Insert Classroom</h1>
+        <h4 class="page-title">⠀</h4>
+        <form class="pure-form pure-form-aligned" method="POST" action="{{ url_for('insert_classroom') }}">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="aligned-name">Classroom ID</label>
+                    <input type="text" name="classroomID" placeholder="Classroom ID" required/>
+                </div>
+                <div class="pure-control-group">
+                    <label for="aligned-password">Seats</label>
+                    <input type="text" name="Seats" placeholder="Seats" required/>
+                </div>   
+                <div class="pure-control-group">
+                    <label for="aligned-password">Type</label>
+                    <input type="text" name="Type" placeholder="Type" required/>
+                </div>                  
+                <div class="pure-control-group">
+                    <button type="submit" class="pure-button pure-button-primary">Add</button>
+                </div>
+            </fieldset>
+        </form>
+        <h4 class="page-title" style="color:black;">{{ uosCode }}</h4>
+        
+    </div>
+</div>
+</body>
+</html>

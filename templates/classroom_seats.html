@@ -1,0 +1,40 @@
+{% include 'top.html' %}
+<div id="content">
+    <div id="container">
+        <h1 class="page-title">Classroom by seats</h1>
+        <h4 class="page-title">⠀</h4>
+        <form class="pure-form pure-form-aligned" method="POST" action="{{ url_for('get_classroom_seats') }}">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="aligned-name">Seats</label>
+                    <input type="text" name="Seats" placeholder="Seats" required/>
+                </div>               
+                <div class="pure-control-group">
+                    <button type="submit" class="pure-button pure-button-primary">Add</button>
+                </div>
+            </fieldset>
+        </form>
+        <h4 class="page-title" style="color:black;">{{ uosCode }}</h4>
+
+        <table class="pure-table">
+            <thead>
+                <tr><th>Classroom ID</th><th>Seats</th><th>Type</th></tr>
+            </thead>
+            <tbody>
+               
+                {% for classroom in classrooms %}
+                    <tr>
+						<td> {{classroom[0]}}</td>
+                        <td> {{classroom[1]}} </td>
+                        <td> {{classroom[2]}} </td>
+                       
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+        
+    </div>
+
+</div>
+</body>
+</html>
